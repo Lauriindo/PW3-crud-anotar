@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach($variavel as $v)
-        <h1>{{$v}}</h1>
+    @foreach($users as $u)
+        <h1>{{$u}}</h1>
     @endforeach
     <a href="{{route('Crud.create')}}">Botão</a>
 </body>
