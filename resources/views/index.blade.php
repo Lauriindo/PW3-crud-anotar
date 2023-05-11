@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="">Pesquisar</a>
+    <a href="{{route('welcome')}}">Ver todos</a>
     <a href="{{route('create')}}">Cadastrar nome e idade</a>
 </body>
 </html>

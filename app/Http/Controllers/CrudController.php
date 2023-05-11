@@ -22,7 +22,7 @@ class CrudController extends Controller
 
     public function index()
     {
-        return view ('welcome',['users' => $this -> users]);
+        return view ('welcome',['user' => $this -> users]);
     }
 
     /**
@@ -40,6 +40,7 @@ class CrudController extends Controller
     {
         $name = $request->name;
         $age = $request->age;
+
         return view('index', ['user' => $this -> users]);
     }
 

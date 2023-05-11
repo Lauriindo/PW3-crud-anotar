@@ -12,7 +12,7 @@ use App\Http\Controllers\CrudController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get ('/', function(){
-    return view ('index');
-});
+
+Route::get('/', [CrudController::class, 'index'])->name('users.index');
 Route::get('/Users/create', [CrudController::class, 'create'])->name('users.create');
+Route::post('/users', [CrudController::class, 'store'])->name('users.store');
