@@ -12,8 +12,7 @@ use App\Http\Controllers\CrudController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource ('Crud', CrudController::class)
-('book', CrudController::class)->parameters([
-    'posts' => 'id'
-]);
-
+Route::get ('/', function(){
+    return view ('index');
+});
+Route::get('/Users/create', [CrudController::class, 'create'])->name('users.create');

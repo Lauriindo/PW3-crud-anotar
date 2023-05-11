@@ -9,12 +9,20 @@ class CrudController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public $users = ['Ana Maria','João','André'];
-    public $pessoas = 3;
+    public $users = [
+        [
+            'name' => 'Ana Maria',
+            'age' => '12'
+        ],
+        [
+            'name' => 'João',
+            'age' => '10'
+        ]
+    ];
 
     public function index()
     {
-        return view ('welcome',['variavel' => $this -> users]);
+        return view ('welcome',['users' => $this -> users]);
     }
 
     /**
@@ -30,8 +38,9 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        $this -> users [$this -> pessoas] = $request -> name;
-        return redirect() -> route('Crud.index');
+        $name = $request->name;
+        $age = $request->age;
+        return view('index', ['user' => $this -> users]);
     }
 
     /**
